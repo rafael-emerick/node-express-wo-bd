@@ -4,9 +4,7 @@ const { uuid, isUuid } = require('uuidv4');
 const app = express()
 
 app.use(express.json())
-//resposta retorna algo para o cliente.
-//todo retorno tem que usar o response.
-//request guarda as informações que o cliente está enviando.
+
 
 const projects = [];
 
@@ -21,7 +19,7 @@ function logRequest(req, res, next){
     console.timeEnd(logLabel)
 }
 
-//interrompe totalmente a requisição.
+
 function validateProjectId(req, res, next){
     const { id } = req.params;
 
@@ -83,7 +81,7 @@ app.delete('/projects/:id',  (req, res) => {
 });
 
 
-//adicionando msg para quando o servidor for inicilizado
+
 app.listen(3333, () => {
     console.log('Server iniciado.');
 })
